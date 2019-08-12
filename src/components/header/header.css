@@ -1,0 +1,20 @@
+.navbar_main {
+  height: 50px;
+  width: 100%;
+  background-color: rgb(51, 89, 223);
+  font-family: DINRegular, Roboto, sans-serif;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.btn_main {
+}
+
+.container_generate_form {
+  background-color: antiquewhite;
+  height: 100px;
+  width: 150px;
+  margin-top: 50px;
+}
