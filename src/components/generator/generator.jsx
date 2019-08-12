@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import generatePhoneNumbers from "../../utils/generator";
+import Numbers from "../numbers/numbers";
 
 class generator extends Component {
   state = {
@@ -36,6 +37,7 @@ class generator extends Component {
   };
 
   render() {
+    const { generatedPhoneNumbers } = this.state;
     return (
       <>
         <form onSubmit={this.handleSubmit}>
@@ -46,6 +48,9 @@ class generator extends Component {
           />
           <button type="submit">Generate</button>
         </form>
+        <div>
+          <Numbers generatedPhoneNumbers={generatedPhoneNumbers} />
+        </div>
       </>
     );
   }
