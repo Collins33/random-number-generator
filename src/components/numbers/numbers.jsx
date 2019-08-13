@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import checkArray from "../../utils/arrayCheck";
+import PropTypes from "prop-types";
 import "./numbers.css";
 
 class Numbers extends Component {
@@ -34,5 +35,10 @@ class Numbers extends Component {
     );
   }
 }
-
+Number.defaultProps = {
+  generatedPhoneNumbers: []
+};
+Number.propTypes = {
+  generatedPhoneNumbers: PropTypes.array
+};
 export default Numbers;
