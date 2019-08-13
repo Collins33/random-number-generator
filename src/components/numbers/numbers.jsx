@@ -28,7 +28,7 @@ class Numbers extends Component {
             </div>
           </>
         ) : (
-          <h1>There is nothing</h1>
+          <h1>There are no numbers generated.</h1>
         )}
       </>
     );

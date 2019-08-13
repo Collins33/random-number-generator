@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import generatePhoneNumbers from "../../utils/generator";
 import Numbers from "../numbers/numbers";
+import "./generator.css";
 
 class generator extends Component {
   state = {
@@ -40,13 +41,17 @@ class generator extends Component {
     const { generatedPhoneNumbers } = this.state;
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="form_number_generator">
           <input
             type="number"
             value={this.state.amount}
             onChange={this.handleChange}
+            className="input_number_generator"
+            placeholder="Enter amount of phone numbers to generate"
           />
-          <button type="submit">Generate</button>
+          <button type="submit" className="btn_number_generator">
+            Generate
+          </button>
         </form>
         <div>
           <Numbers generatedPhoneNumbers={generatedPhoneNumbers} />

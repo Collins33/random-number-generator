@@ -1,0 +1,15 @@
+.form_number_generator {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.input_number_generator {
+  width: 50%;
+  height: 25px;
+}
+
+.btn_number_generator {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(51, 89, 223);
+}
