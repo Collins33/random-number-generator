@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import checkArray from "../../utils/arrayCheck";
+import "./numbers.css";
 
 class Numbers extends Component {
   render() {
@@ -7,13 +8,29 @@ class Numbers extends Component {
     const valueOfArray = checkArray(generatedPhoneNumbers);
     const phoneNumbers = generatedPhoneNumbers.map((number, index) => {
       return (
-        <div key={index}>
-          <h1>{number}</h1>
+        <div key={index} className="mini_header_numbers_generated">
+          <div className="element_number">{index + 1}</div>
+          <div className="element_number">{number}</div>
         </div>
       );
     });
     return (
-      <>{valueOfArray ? <>{phoneNumbers}</> : <h1>There is nothing</h1>}</>
+      <>
+        {valueOfArray ? (
+          <>
+            <div>
+              <div className="header_numbers_generated">Numbers generated</div>
+              <div className="mini_header_numbers_generated">
+                <div className="element_number_header">Index</div>
+                <div className="element_number_header">Phone Number</div>
+              </div>
+              {phoneNumbers}
+            </div>
+          </>
+        ) : (
+          <h1>There is nothing</h1>
+        )}
+      </>
     );
   }
 }
