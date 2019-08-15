@@ -5,7 +5,8 @@ import "./generator.css";
 
 class generator extends Component {
   state = {
-    generatedPhoneNumbers: []
+    generatedPhoneNumbers: [],
+    amount: ""
   };
 
   /**
@@ -32,7 +33,7 @@ class generator extends Component {
         generatedPhoneNumbers: sortedNumbers
       });
     } else {
-      alert("You can only generate 10000 contacts");
+      alert("You can only generate 10000 contacts at once");
     }
   };
 
