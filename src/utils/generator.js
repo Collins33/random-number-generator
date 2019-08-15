@@ -8,7 +8,7 @@ const generatePhoneNumbers = (generatedNumbers, amount) => {
     number = `0${Math.floor(Math.random() * 1000000000 + 1)}`;
     if (
       !generatedNumbers.includes(number) &&
-      generatedNumbers.length <= 10000
+      generatedNumbers.length <= 100000
     ) {
       generatedNumbers.push(number);
     }

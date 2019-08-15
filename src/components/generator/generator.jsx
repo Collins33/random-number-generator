@@ -37,6 +37,26 @@ class generator extends Component {
     });
   };
 
+  sortGeneratedNumbersDescending = () => {
+    function sortNumber(a, b) {
+      return b - a;
+    }
+    const { generatedPhoneNumbers } = this.state;
+    this.setState({
+      generatedPhoneNumbers: generatedPhoneNumbers.sort(sortNumber)
+    });
+  };
+
+  sortGeneratedNumbersAscending = () => {
+    function sortNumber(a, b) {
+      return a - b;
+    }
+    const { generatedPhoneNumbers } = this.state;
+    this.setState({
+      generatedPhoneNumbers: generatedPhoneNumbers.sort(sortNumber)
+    });
+  };
+
   render() {
     const { generatedPhoneNumbers } = this.state;
     return (
@@ -53,6 +73,20 @@ class generator extends Component {
             Generate
           </button>
         </form>
+        <div>
+          <button
+            onClick={this.sortGeneratedNumbersDescending}
+            className="btn_number_generator"
+          >
+            Descending order
+          </button>
+          <button
+            onClick={this.sortGeneratedNumbersAscending}
+            className="btn_number_generator"
+          >
+            Ascending order
+          </button>
+        </div>
         <div>
           <Numbers generatedPhoneNumbers={generatedPhoneNumbers} />
         </div>

@@ -9,7 +9,8 @@
 }
 
 .btn_number_generator {
-  width: 100px;
+  width: 120px;
   height: 30px;
   background-color: rgb(51, 89, 223);
+  color: aliceblue;
 }
