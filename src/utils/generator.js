@@ -3,6 +3,7 @@
  */
 
 const generatePhoneNumbers = (generatedNumbers, amount) => {
+  generatedNumbers = [];
   let number;
   for (let i = 0; i < amount; i++) {
     number = `0${Math.floor(Math.random() * 1000000000 + 1)}`;

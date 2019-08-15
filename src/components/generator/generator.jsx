@@ -5,7 +5,6 @@ import "./generator.css";
 
 class generator extends Component {
   state = {
-    amount: "",
     generatedPhoneNumbers: []
   };
 
@@ -17,18 +16,24 @@ class generator extends Component {
       localStorage.getItem("generatedContacts")
     );
     this.setState({
-      generatedNumbers: storedGeneratedNumbers,
-      storedNumbers: true
+      generatedNumbers: storedGeneratedNumbers
     });
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { amount, generatedPhoneNumbers } = this.state;
-    const sortedNumbers = generatePhoneNumbers(generatedPhoneNumbers, amount);
     this.setState({
-      generatedPhoneNumbers: sortedNumbers
+      generatedPhoneNumbers: []
     });
+    const { amount, generatedPhoneNumbers } = this.state;
+    if (amount <= 10000) {
+      const sortedNumbers = generatePhoneNumbers(generatedPhoneNumbers, amount);
+      this.setState({
+        generatedPhoneNumbers: sortedNumbers
+      });
+    } else {
+      alert("You can only generate 10000 contacts");
+    }
   };
 
   handleChange = event => {
@@ -67,7 +72,7 @@ class generator extends Component {
             value={this.state.amount}
             onChange={this.handleChange}
             className="input_number_generator"
-            placeholder="Enter amount of phone numbers to generate"
+            placeholder="Enter amount of phone numbers to generate upto 10000"
           />
           <button type="submit" className="btn_number_generator">
             Generate
