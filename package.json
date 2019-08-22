@@ -34,7 +34,7 @@
     "react-test-renderer": "^16.9.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "coveralls": "^3.0.4"
+    "coveralls": "^3.0.5"
   },
   "jest": {
     "collectCoverageFrom": [
